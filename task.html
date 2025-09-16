@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Task Manager</title>
+</head>
+<body>
+    <h2>Open Console to See Output</h2>
+    <script> console.log("Simple Task Manager")
+        let totalTasks = 0;
+        const STASUSES = ["pending", "inprogress", "done"];
+        var note = "var demo";
+        const tasks = [
+            { id: 1, name: "Buy groceries", description: "Milk, eggs", priority: 2, status:"pending", completed: false },
+            { id: 2, name: "pay bills", description: "Electricity", priority: 1, status: "inprogress", completed: false },
+            { id: 3, name: "Finish project", description: "Module work", priority: 3, status: "done", completed: true }
+        ];
+        totalTasks = tasks.length;
+        let completedCount = 0;
+        for (let i=0; i<tasks.length; i++) {
+            if (tasks[i].status === "done" && tasks[i].completed === true) {
+                completedCount++;
+            }
+        }
+        let pendingCount = totalTasks - completedCount;
+        console.log("All Tasks:", tasks);
+        console.log("Total Tasks:", totalTasks);
+        console.log("Completed:", completedCount);
+        console.log("Pending:", pendingCount);
+        const sortedTasks = tasks.sort((a,b)=>a.priority - b.priority);
+        console.log("Sorted by priority:", sortedTasks);
+        console.log(typeof tasks[0].name);
+        console.log(typeof tasks[0].priority);
+        console.log(typeof tasks[0].completed);
+        console.log(typeof tasks[0]);
+        console.log(typeof tasks);
+        console.log(typeof undefined);
+        console.log(typeof null);
+    </script>
+</body>
+</html>
